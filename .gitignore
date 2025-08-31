@@ -1,5 +1,102 @@
 # Removing non-code / non-doc
 
+# # # # # # # # # # # # # # # # # # # # # #
+# GENERAL & META FILES
+# # # # # # # # # # # # # # # # # # # # # #
+# Ignore license, CI/CD, and containerization files
+LICENSE
+.github/
+.pre-commit-config.yaml
+Dockerfile*
+
+# Ignore editor and OS-specific files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Ignore logs
+*.log
+
+# # # # # # # # # # # # # # # # # # # # # #
+# ENVIRONMENT & SENSITIVE FILES
+# # # # # # # # # # # # # # # # # # # # # #
+# Ignore all environment variable files, but keep the examples.
+.env
+.env.*
+!env.example
+!env.*.example
+
+# # # # # # # # # # # # # # # Proje # # # # # #
+# BUILD ARTIFACTS & DEPENDENCIES
+# # # # # # # # # # # # # # # # # # # # # #
+# Ignore caches, compiled files, and build outputs
+__pycache__/
+*.pyc
+[Bb]uild/
+[Dd]ist/
+*.egg-info/
+.next/
+
+# Ignore dependency directories
+node_modules/
+Pods/
+.gradle/
+gradle/
+
+# Ignore dependency lock files
+package-lock.json
+yarn.lock
+
+# # # # # # # # # # # # # # # # # # # # # #
+# NON-CORE & CLIENT-SIDE CODE
+# This section aggressively removes all non-Python source code
+# and UI/client-related files to focus on the Python examples.
+# # # # # # # # # # # # # # # # # # # # # #
+
+# Ignore entire non-core directories
+scripts/
+templates/
+**/test/
+**/tests/
+*Tests/
+*UITests/
+**/res/
+*.xcassets/
+
+# Ignore all non-Python source code files by extension
+*.html
+*.ts
+*.tsx
+*.mjs
+*.swift
+*.kt
+*.java
+*.css
+
+# Ignore client-side project configuration and executables
+package.json
+app.json
+tsconfig.json
+tsconfig.node.json
+*.gradle.kts
+gradle.properties
+gradlew
+gradlew.bat
+vite.config.*
+metro.config.*
+babel.config.*
+next.config.*
+tailwind.config.*
+postcss.config.*
+eslint.config.*
+.eslintrc.json
+.nvmrc
+.prettierrc
+*.pro
+*.plist
+
+
 ###############################################################################
 # 1 — Global ignores (editors, OS, temporary)                                  #
 ###############################################################################
