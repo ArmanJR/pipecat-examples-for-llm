@@ -1,3 +1,263 @@
+# Removing non-code / non-doc
+
+###############################################################################
+# 1 — Global ignores (editors, OS, temporary)                                  #
+###############################################################################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows & *nix cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*~
+
+# Editors/IDEs
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+*.bak
+*.tmp
+*.log
+
+###############################################################################
+# 2 — Version-control / build tooling we don’t want in examples                #
+###############################################################################
+# Git & GitHub workflow config (keep local .git but ignore vendored workflow files)
+.github/
+.gitlab/
+*.patch
+
+# Pre-commit, CI/CD, linters
+.pre-commit-config.yaml
+*.yml
+*.yaml
+
+###############################################################################
+# 3 — Language-specific build outputs                                          #
+###############################################################################
+# ─ Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+*.dist-info/
+.eggs/
+pip-wheel-metadata/
+htmlcov/
+
+# ─ Node / JavaScript / TypeScript ────────────────────────────────────────────
+node_modules/
+.npm/
+.yarn/
+.pnpm/
+dist/
+build/
+out/
+.next/
+.nextjs-webhook-server/.next/
+.storybook/
+coverage/
+*.tsbuildinfo
+
+# ─ Java / Android / Gradle ───────────────────────────────────────────────────
+*.class
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+build/
+bin/
+*.jar
+*.war
+*.apk
+*.aar
+*.dex
+*.o
+*.obj
+
+# ─ Swift / Xcode ─────────────────────────────────────────────────────────────
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad
+*.xcassets
+DerivedData/
+build/
+
+###############################################################################
+# 4 — Container & deployment artefacts                                         #
+###############################################################################
+Dockerfile
+.dockerignore
+*.toml
+
+###############################################################################
+# 5 — Static assets & styling (not source code)                                #
+###############################################################################
+# CSS, images, design files
+*.css
+*.scss
+*.sass
+*.less
+*.svg
+*.webp
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.xml       # Android & iOS drawable assets
+*.plist     # iOS property lists
+*.xcf
+*.psd
+*.sketch
+*.fig
+
+###############################################################################
+# 6 — Documentation licences & misc                                            #
+###############################################################################
+LICENSE
+COPYING
+*.pdf
+
+###############################################################################
+# 7 — Compiled & generated audio/video assets                                  #
+###############################################################################
+*.mp3
+*.wav
+*.ogg
+*.mp4
+*.mov
+*.webm
+
+# # # # # # # # # # # # # # # # # # # # # #
+# GENERAL & META FILES
+# # # # # # # # # # # # # # # # # # # # # #
+
+# Ignore license and CI/CD configuration
+LICENSE
+.github/
+.pre-commit-config.yaml
+
+# Ignore editor and OS-specific files
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Ignore logs
+*.log
+
+
+# # # # # # # # # # # # # # # # # # # # # #
+# ENVIRONMENT & SENSITIVE FILES
+# # # # # # # # # # # # # # # # # # # # # #
+
+# Ignore all environment variable files, but keep the examples.
+.env
+.env.*
+!env.example
+!env.*.example
+
+
+# # # # # # # # # # # # # # # # # # # # # #
+# PYTHON SPECIFIC
+# # # # # # # # # # # # # # # # # # # # # #
+
+# Ignore virtual environments
+venv/
+.venv/
+env/
+
+# Ignore Python bytecode and cache
+__pycache__/
+*.pyc
+
+# Ignore Python build artifacts
+build/
+dist/
+*.egg-info/
+
+
+# # # # # # # # # # # # # # # # # # # # # #
+# JAVASCRIPT / NODE.JS SPECIFIC
+# # # # # # # # # # # # # # # # # # # # # #
+
+# Ignore dependency directories
+node_modules/
+
+# Ignore build output directories
+.next/
+# `dist/` and `build/` are already covered
+
+# Ignore lock files and debug logs
+package-lock.json
+yarn.lock
+npm-debug.log*
+yarn-error.log*
+
+# Ignore Node version manager config
+.nvmrc
+
+
+# # # # # # # # # # # # # # # # # # # # # #
+# NATIVE MOBILE (ANDROID & IOS)
+# # # # # # # # # # # # # # # # # # # # # #
+
+# Ignore Gradle and Android build files/folders
+.gradle/
+gradle/
+gradlew
+gradlew.bat
+*.pro
+# `build/` is already covered
+
+# Ignore iOS build artifacts
+Pods/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+
+# Ignore mobile asset/resource folders
+**/res/
+**/*.xcassets/
+
+
+# # # # # # # # # # # # # # # # # # # # # #
+# PROJECT-SPECIFIC & MISCELLANEOUS
+# # # # # # # # # # # # # # # # # # # # # #
+
+# Ignore styling files as requested
+*.css
+
+# Ignore build scripts and docker tooling
+*.sh
+.dockerignore
+
+# Ignore deployment-specific config files
+*.toml
+# But keep the main Python project file
+!pyproject.toml
+
+# Ignore template files
+*.xml.template
+
+# Ignore linter/formatter configurations
+.eslint*
+.prettierrc
+postcss.config.*
+components.json
+
+
+# ---
+# original gitignore:
+
 .vscode
 env/
 __pycache__/
